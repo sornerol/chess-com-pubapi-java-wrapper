@@ -2,6 +2,7 @@ package io.github.sornerol.chess.pubapi.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.sornerol.chess.pubapi.client.enums.ResponseCode;
+import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 import lombok.extern.java.Log;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -21,7 +22,7 @@ public class ChessComPubApiClient {
         httpClient = HttpClients.createDefault();
     }
 
-    public <T> T getRequest(String endpoint, Class<T> clazz) throws IOException {
+    public <T> T getRequest(String endpoint, Class<T> clazz) throws IOException, ChessComPubApiException {
 
         HttpGet request = new HttpGet(CHESS_COM_API_URL_BASE + endpoint);
 
@@ -29,8 +30,7 @@ public class ChessComPubApiClient {
         int statusCode = response.getStatusLine().getStatusCode();
         //TODO: Handle rate throttling more gracefully
         if (statusCode != ResponseCode.OK.getValue()) {
-            log.severe("Error executing GET request: API returned status code " + statusCode);
-            return null;
+            throw new ChessComPubApiException("Error executing GET request: API returned status code " + statusCode);
         }
         InputStream responseJson = response.getEntity().getContent();
         ObjectMapper objectMapper = new ObjectMapper();
