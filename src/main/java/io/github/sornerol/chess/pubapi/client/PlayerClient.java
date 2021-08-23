@@ -2,7 +2,9 @@ package io.github.sornerol.chess.pubapi.client;
 
 import io.github.sornerol.chess.pubapi.domain.player.Player;
 import io.github.sornerol.chess.pubapi.domain.player.PlayerList;
+import io.github.sornerol.chess.pubapi.domain.player.PlayerOnline;
 import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
+import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 import lombok.extern.java.Log;
 
 import java.io.IOException;
@@ -17,20 +19,22 @@ public class PlayerClient {
         apiClient = new ChessComPubApiClient();
     }
 
-    public Player loadPlayer(String userName) throws IOException {
+    public Player loadPlayer(String userName) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s", ENDPOINT_BASE, userName);
         return apiClient.getRequest(endpoint, Player.class);
     }
 
-    public List<String> playersWithTitle(Title title) throws IOException {
+    public List<String> playersWithTitle(Title title) throws IOException, ChessComPubApiException {
         String endpoint = String.format("titled/%s", title);
-        PlayerList players = apiClient.getRequest(endpoint, PlayerList.class);
-        return players.getPlayers();
+        return apiClient.getRequest(endpoint, PlayerList.class).getPlayers();
     }
 
     //player stats
 
-    //is online
+    public Boolean isPlayerOnline(String userName) throws IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/is-online", ENDPOINT_BASE, userName);
+        return apiClient.getRequest(endpoint, PlayerOnline.class).getOnline();
+    }
 
     //daily chess games in progress
 
