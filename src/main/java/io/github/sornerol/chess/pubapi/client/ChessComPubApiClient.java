@@ -1,6 +1,7 @@
 package io.github.sornerol.chess.pubapi.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.sornerol.chess.pubapi.client.enums.ResponseCode;
 import lombok.extern.java.Log;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;

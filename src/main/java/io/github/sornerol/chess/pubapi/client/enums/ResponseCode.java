@@ -1,4 +1,4 @@
-package io.github.sornerol.chess.pubapi.client;
+package io.github.sornerol.chess.pubapi.client.enums;
 
 import lombok.Getter;
 
