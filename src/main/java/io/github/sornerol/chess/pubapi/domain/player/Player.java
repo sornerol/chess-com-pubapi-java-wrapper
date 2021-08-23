@@ -3,7 +3,9 @@ package io.github.sornerol.chess.pubapi.domain.player;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+@ToString
 public class Player {
 
     @JsonProperty("@id")
@@ -30,7 +32,7 @@ public class Player {
     @Getter @Setter
     private String status;
 
-    @JsonProperty("username")
+    @JsonProperty("name")
     @Getter @Setter
     private String name;
 
