@@ -1,8 +1,6 @@
 package io.github.sornerol.chess.pubapi.client;
 
-import io.github.sornerol.chess.pubapi.domain.player.Player;
-import io.github.sornerol.chess.pubapi.domain.player.PlayerList;
-import io.github.sornerol.chess.pubapi.domain.player.PlayerOnline;
+import io.github.sornerol.chess.pubapi.domain.player.*;
 import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 import lombok.extern.java.Log;
@@ -36,17 +34,34 @@ public class PlayerClient {
         return apiClient.getRequest(endpoint, PlayerOnline.class).getOnline();
     }
 
-    //daily chess games in progress
+    public GameList currentDailyChessGamesForPlayer(String userName) throws IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/games", ENDPOINT_BASE, userName);
+        return apiClient.getRequest(endpoint, GameList.class);
+    }
 
-    //daily chess - to move
+    public GameList toMoveDailyChessGamesForPlayer(String userName) throws IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/games/to-move", ENDPOINT_BASE, userName);
+        return apiClient.getRequest(endpoint, GameList.class);
+    }
 
-    //games archive
+    public List<String> gameArchiveForPlayer(String userName) throws IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/games/archives", ENDPOINT_BASE, userName);
+        return apiClient.getRequest(endpoint, ArchivesList.class).getArchives();
+    }
 
     //finished games by year/month
 
-    //pgn file download of all games for year/month
+    public String pgnArchiveForPlayer(String userName,
+                                      Integer year,
+                                      Integer month) throws IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/games/%s/%s/pgn", ENDPOINT_BASE, userName, year, month);
+        return apiClient.getRequest(endpoint);
+    }
 
-    //player's clubs
+    public ClubList clubsForPlayer(String userName) throws  IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/clubs", ENDPOINT_BASE, userName);
+        return apiClient.getRequest(endpoint, ClubList.class);
+    }
 
     //player's team matches
 
