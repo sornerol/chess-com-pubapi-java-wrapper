@@ -1,7 +1,10 @@
 package io.github.sornerol.chess.pubapi.client;
 
 import io.github.sornerol.chess.pubapi.domain.player.*;
+import io.github.sornerol.chess.pubapi.domain.player.club.ClubList;
 import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
+import io.github.sornerol.chess.pubapi.domain.player.game.ArchivesList;
+import io.github.sornerol.chess.pubapi.domain.player.game.GameList;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 import lombok.extern.java.Log;
 

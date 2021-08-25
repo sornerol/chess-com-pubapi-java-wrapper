@@ -1,4 +1,4 @@
-package io.github.sornerol.chess.pubapi.domain.player;
+package io.github.sornerol.chess.pubapi.domain.player.club;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
