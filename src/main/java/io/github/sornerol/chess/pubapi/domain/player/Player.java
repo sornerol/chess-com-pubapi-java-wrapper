@@ -46,7 +46,7 @@ public class Player {
 
     @JsonProperty("country")
     @Getter @Setter
-    private String country;
+    private String countryApiUrl;
 
     @JsonProperty("joined")
     @Getter @Setter

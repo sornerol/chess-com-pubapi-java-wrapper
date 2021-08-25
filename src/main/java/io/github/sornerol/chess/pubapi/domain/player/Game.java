@@ -41,10 +41,10 @@ public class Game {
     @Getter @Setter private String rules;
 
     @JsonProperty("white")
-    @Getter @Setter private String white;
+    @Getter @Setter private String whiteApiUrl;
 
     @JsonProperty("black")
-    @Getter @Setter private String black;
+    @Getter @Setter private String blackApiUrl;
 
     @JsonProperty("draw_offer")
     @Getter @Setter private String drawOffer;
