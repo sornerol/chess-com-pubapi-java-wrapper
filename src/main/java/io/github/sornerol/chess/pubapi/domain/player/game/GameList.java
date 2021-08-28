@@ -7,8 +7,10 @@ import lombok.ToString;
 
 import java.util.List;
 
+@Getter
+@Setter
 @ToString
 public class GameList {
     @JsonProperty("games")
-    @Getter @Setter private List<Game> games;
+    private List<Game> games;
 }

@@ -5,17 +5,19 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
 public class RatingPoolStats {
     @JsonProperty("last")
-    @Getter @Setter private Rating last;
+    private Rating last;
 
     @JsonProperty("best")
-    @Getter @Setter private Rating best;
+    private Rating best;
 
     @JsonProperty("record")
-    @Getter @Setter private RatingPoolRecord record;
+    private RatingPoolRecord record;
 
     @JsonProperty("tournament")
-    @Getter @Setter private TournamentStats tournament;
+    private TournamentStats tournament;
 }

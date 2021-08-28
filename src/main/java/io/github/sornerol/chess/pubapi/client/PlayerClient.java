@@ -4,17 +4,16 @@ import io.github.sornerol.chess.pubapi.domain.player.*;
 import io.github.sornerol.chess.pubapi.domain.player.club.ClubList;
 import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
 import io.github.sornerol.chess.pubapi.domain.player.game.ArchiveApiUrlList;
+import io.github.sornerol.chess.pubapi.domain.player.game.ArchiveGameList;
 import io.github.sornerol.chess.pubapi.domain.player.game.GameList;
 import io.github.sornerol.chess.pubapi.domain.player.stats.PlayerStats;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
-import lombok.extern.java.Log;
 
 import java.io.IOException;
 import java.util.List;
 
-@Log
 public class PlayerClient extends PubApiClientBase {
-    private static final String ENDPOINT_BASE = "player/";
+    private static final String ENDPOINT_BASE = "player";
 
     public Player loadPlayer(String username) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s", ENDPOINT_BASE, username);
@@ -51,12 +50,17 @@ public class PlayerClient extends PubApiClientBase {
         return getRequest(endpoint, ArchiveApiUrlList.class);
     }
 
-    //finished games by year/month
+    public ArchiveGameList monthlyArchiveForPlayer(String username,
+                                                  Integer year,
+                                                  Integer month) throws IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/games/%04d/%02d", ENDPOINT_BASE, username, year, month);
+        return getRequest(endpoint, ArchiveGameList.class);
+    }
 
-    public String pgnArchiveForPlayer(String username,
+    public String monthlyPgnArciveForPlayer(String username,
                                       Integer year,
                                       Integer month) throws IOException, ChessComPubApiException {
-        String endpoint = String.format("%s/%s/games/%s/%s/pgn", ENDPOINT_BASE, username, year, month);
+        String endpoint = String.format("%s/%s/games/%04d/%02d/pgn", ENDPOINT_BASE, username, year, month);
         return getRequest(endpoint);
     }
 

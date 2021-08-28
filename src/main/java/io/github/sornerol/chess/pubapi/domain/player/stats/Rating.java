@@ -5,17 +5,19 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
 public class Rating {
     @JsonProperty("rating")
-    @Getter @Setter private Integer score;
+    private Integer score;
 
     @JsonProperty("date")
-    @Getter @Setter private Long date;
+    private Long date;
 
     @JsonProperty("rd")
-    @Getter @Setter private Integer rd;
+    private Integer rd;
 
     @JsonProperty("game")
-    @Getter @Setter private String gameUrl;
+    private String gameUrl;
 }

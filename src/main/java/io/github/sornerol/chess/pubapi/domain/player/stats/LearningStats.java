@@ -5,11 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
 public class LearningStats {
     @JsonProperty("highest")
-    @Getter @Setter private Rating highest;
+    private Rating highest;
 
     @JsonProperty("lowest")
-    @Getter @Setter private Rating lowest;
+    private Rating lowest;
 }

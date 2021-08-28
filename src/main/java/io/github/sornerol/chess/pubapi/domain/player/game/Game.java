@@ -5,53 +5,25 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
-public class Game {
-    @JsonProperty("url")
-    @Getter @Setter private String url;
-
+public class Game extends GameBase {
     @JsonProperty("move_by")
-    @Getter @Setter private Long moveBy;
-
-    @JsonProperty("pgn")
-    @Getter @Setter private String pgn;
-
-    @JsonProperty("time_control")
-    @Getter @Setter private String timeControl;
+    private Long moveBy;
 
     @JsonProperty("last_activity")
-    @Getter @Setter private Long lastActivity;
-
-    @JsonProperty("rated")
-    @Getter @Setter private Boolean rated;
+    private Long lastActivity;
 
     @JsonProperty("turn")
-    @Getter @Setter private String turn;
-
-    @JsonProperty("fen")
-    @Getter @Setter private String fen;
-
-    @JsonProperty("start_time")
-    @Getter @Setter private Long startTime;
-
-    @JsonProperty("time_class")
-    @Getter @Setter private String timeClass;
-
-    @JsonProperty("rules")
-    @Getter @Setter private String rules;
+    private String turn;
 
     @JsonProperty("white")
-    @Getter @Setter private String whiteApiUrl;
+    private String whiteApiUrl;
 
     @JsonProperty("black")
-    @Getter @Setter private String blackApiUrl;
+    private String blackApiUrl;
 
     @JsonProperty("draw_offer")
-    @Getter @Setter private String drawOffer;
-
-    @JsonProperty("tournament")
-    @Getter @Setter private String tournament;
-
-    @JsonProperty("match")
-    @Getter @Setter private String match;
+    private String drawOffer;
 }

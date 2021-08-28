@@ -5,12 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
 @ToString
-public class ArchiveApiUrlList {
-    @JsonProperty("archives")
-    private List<String> archiveApiUrls;
+public class Accuracies {
+    @JsonProperty("white")
+    private BigDecimal white;
+
+    @JsonProperty("black")
+    private BigDecimal black;
 }

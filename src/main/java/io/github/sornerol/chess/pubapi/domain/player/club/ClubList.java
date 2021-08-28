@@ -7,8 +7,10 @@ import lombok.ToString;
 
 import java.util.List;
 
+@Getter
+@Setter
 @ToString
 public class ClubList {
     @JsonProperty("clubs")
-    @Getter @Setter private List<Club> clubs;
+    private List<Club> clubs;
 }

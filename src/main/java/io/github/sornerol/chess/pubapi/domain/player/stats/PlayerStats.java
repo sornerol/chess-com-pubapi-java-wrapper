@@ -5,32 +5,34 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
 public class PlayerStats {
     @JsonProperty("fide")
-    @Getter @Setter private Long fide;
+    private Long fide;
 
     @JsonProperty("chess_daily")
-    @Getter @Setter private RatingPoolStats chessDaily;
+    private RatingPoolStats chessDaily;
 
     @JsonProperty("chess960_daily")
-    @Getter @Setter private RatingPoolStats chess960Daily;
+    private RatingPoolStats chess960Daily;
 
     @JsonProperty("chess_rapid")
-    @Getter @Setter private RatingPoolStats chessRapid;
+    private RatingPoolStats chessRapid;
 
     @JsonProperty("chess_bullet")
-    @Getter @Setter private RatingPoolStats chessBullet;
+    private RatingPoolStats chessBullet;
 
     @JsonProperty("chess_blitz")
-    @Getter @Setter private RatingPoolStats chessBlitz;
+    private RatingPoolStats chessBlitz;
 
     @JsonProperty("tactics")
-    @Getter @Setter private LearningStats tactics;
+    private LearningStats tactics;
 
     @JsonProperty("lessons")
-    @Getter @Setter private LearningStats lessons;
+    private LearningStats lessons;
 
     @JsonProperty("puzzle_rush")
-    @Getter @Setter private PuzzleRushStats puzzleRush;
+    private PuzzleRushStats puzzleRush;
 }

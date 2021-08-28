@@ -5,11 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
 public class PuzzleRushStatistic {
     @JsonProperty("total_attempts")
-    @Getter @Setter private Integer totalAttempts;
+    private Integer totalAttempts;
 
     @JsonProperty("score")
-    @Getter @Setter private Integer score;
+    private Integer score;
 }

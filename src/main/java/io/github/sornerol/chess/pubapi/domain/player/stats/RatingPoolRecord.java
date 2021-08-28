@@ -7,20 +7,22 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 
+@Getter
+@Setter
 @ToString
 public class RatingPoolRecord {
     @JsonProperty("win")
-    @Getter @Setter private Integer win;
+    private Integer win;
 
     @JsonProperty("loss")
-    @Getter @Setter private Integer loss;
+    private Integer loss;
 
     @JsonProperty("draw")
-    @Getter @Setter private Integer draw;
+    private Integer draw;
 
     @JsonProperty("time_per_move")
-    @Getter @Setter private Integer timePerMove;
+    private Integer timePerMove;
 
     @JsonProperty("timeout_percent")
-    @Getter @Setter private BigDecimal timeoutPercent;
+    private BigDecimal timeoutPercent;
 }

@@ -1,4 +1,4 @@
-package io.github.sornerol.chess.pubapi.domain.player;
+package io.github.sornerol.chess.pubapi.domain.player.game;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class PlayerOnline {
-    @JsonProperty("online")
-    private Boolean online;
+public class ArchiveGameList {
+    @JsonProperty("games")
+   private List<ArchiveGame> games;
 }

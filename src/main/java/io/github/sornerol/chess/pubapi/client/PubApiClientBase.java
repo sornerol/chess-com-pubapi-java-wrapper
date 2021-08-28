@@ -3,7 +3,7 @@ package io.github.sornerol.chess.pubapi.client;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.sornerol.chess.pubapi.client.enums.ResponseCode;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
-import lombok.extern.java.Log;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-@Log
 public abstract class PubApiClientBase {
     private static final String CHESS_COM_API_URL_BASE = "https://api.chess.com/pub/";
 
@@ -32,7 +31,8 @@ public abstract class PubApiClientBase {
     }
 
     String getRequest(String endpoint) throws IOException, ChessComPubApiException {
-        HttpGet request = new HttpGet(CHESS_COM_API_URL_BASE + endpoint);
+        String fullUrl = CHESS_COM_API_URL_BASE + endpoint;
+        HttpGet request = new HttpGet(fullUrl);
 
         CloseableHttpResponse response = httpClient.execute(request);
         int statusCode = response.getStatusLine().getStatusCode();

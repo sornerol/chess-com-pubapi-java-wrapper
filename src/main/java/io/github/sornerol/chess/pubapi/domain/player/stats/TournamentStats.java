@@ -5,17 +5,19 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
 public class TournamentStats {
     @JsonProperty("points")
-    @Getter @Setter private Integer points;
+    private Integer points;
 
     @JsonProperty("withdraw")
-    @Getter @Setter private Integer withdraw;
+    private Integer withdraw;
 
     @JsonProperty("count")
-    @Getter @Setter private Integer count;
+    private Integer count;
 
     @JsonProperty("highest_finish")
-    @Getter @Setter private Integer highestFinish;
+    private Integer highestFinish;
 }

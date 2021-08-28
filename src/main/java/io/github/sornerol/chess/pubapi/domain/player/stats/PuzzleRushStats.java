@@ -5,8 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
 public class PuzzleRushStats {
     @JsonProperty("best")
-    @Getter @Setter private PuzzleRushStatistic best;
+    private PuzzleRushStatistic best;
 }

@@ -5,23 +5,25 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+@Getter
+@Setter
 @ToString
 public class Club {
     @JsonProperty("@id")
-    @Getter @Setter private String id;
+    private String id;
 
     @JsonProperty("name")
-    @Getter @Setter private String name;
+    private String name;
 
     @JsonProperty("last_activity")
-    @Getter @Setter private Long lastActivity;
+    private Long lastActivity;
 
     @JsonProperty("icon")
-    @Getter @Setter private String iconUrl;
+    private String iconUrl;
 
     @JsonProperty("url")
-    @Getter @Setter private String url;
+    private String url;
 
     @JsonProperty("joined")
-    @Getter @Setter private Long joined;
+    private Long joined;
 }
