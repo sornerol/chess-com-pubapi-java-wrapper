@@ -3,7 +3,7 @@ package io.github.sornerol.chess.pubapi.client;
 import io.github.sornerol.chess.pubapi.domain.player.*;
 import io.github.sornerol.chess.pubapi.domain.player.club.ClubList;
 import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
-import io.github.sornerol.chess.pubapi.domain.player.game.ArchivesList;
+import io.github.sornerol.chess.pubapi.domain.player.game.ArchiveApiUrlList;
 import io.github.sornerol.chess.pubapi.domain.player.game.GameList;
 import io.github.sornerol.chess.pubapi.domain.player.stats.PlayerStats;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
@@ -46,9 +46,9 @@ public class PlayerClient extends ChessComPubApiClientBase {
         return getRequest(endpoint, GameList.class);
     }
 
-    public List<String> gameArchiveForPlayer(String username) throws IOException, ChessComPubApiException {
+    public ArchiveApiUrlList monthlyArchivesAvailableForPlayer(String username) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s/games/archives", ENDPOINT_BASE, username);
-        return getRequest(endpoint, ArchivesList.class).getArchives();
+        return getRequest(endpoint, ArchiveApiUrlList.class);
     }
 
     //finished games by year/month

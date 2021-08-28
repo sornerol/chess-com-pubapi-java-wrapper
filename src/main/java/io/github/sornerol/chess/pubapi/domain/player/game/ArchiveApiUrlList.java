@@ -6,9 +6,9 @@ import lombok.Setter;
 
 import java.util.List;
 
-public class ArchivesList {
+public class ArchiveApiUrlList {
     @JsonProperty("archives")
     @Getter
     @Setter
-    private List<String> archives;
+    private List<String> archiveApiUrls;
 }
