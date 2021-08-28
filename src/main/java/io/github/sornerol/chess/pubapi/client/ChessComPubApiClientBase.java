@@ -15,23 +15,23 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 @Log
-public class ChessComPubApiClient {
+public abstract class ChessComPubApiClientBase {
     private static final String CHESS_COM_API_URL_BASE = "https://api.chess.com/pub/";
 
     private final CloseableHttpClient httpClient;
 
-    public ChessComPubApiClient() {
+    public ChessComPubApiClientBase() {
         httpClient = HttpClients.createDefault();
     }
 
-    public <T> T getRequest(String endpoint, Class<T> clazz) throws IOException, ChessComPubApiException {
+    <T> T getRequest(String endpoint, Class<T> clazz) throws IOException, ChessComPubApiException {
         String responseJson = getRequest(endpoint);
 
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(responseJson, clazz);
     }
 
-    public String getRequest (String endpoint) throws IOException, ChessComPubApiException {
+    String getRequest(String endpoint) throws IOException, ChessComPubApiException {
         HttpGet request = new HttpGet(CHESS_COM_API_URL_BASE + endpoint);
 
         CloseableHttpResponse response = httpClient.execute(request);
