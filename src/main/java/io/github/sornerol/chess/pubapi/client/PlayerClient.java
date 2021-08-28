@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Log
-public class PlayerClient extends ChessComPubApiClientBase {
+public class PlayerClient extends PubApiClientBase {
     private static final String ENDPOINT_BASE = "player/";
 
     public Player loadPlayer(String username) throws IOException, ChessComPubApiException {

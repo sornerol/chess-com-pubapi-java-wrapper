@@ -15,12 +15,12 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 @Log
-public abstract class ChessComPubApiClientBase {
+public abstract class PubApiClientBase {
     private static final String CHESS_COM_API_URL_BASE = "https://api.chess.com/pub/";
 
     private final CloseableHttpClient httpClient;
 
-    public ChessComPubApiClientBase() {
+    public PubApiClientBase() {
         httpClient = HttpClients.createDefault();
     }
 
