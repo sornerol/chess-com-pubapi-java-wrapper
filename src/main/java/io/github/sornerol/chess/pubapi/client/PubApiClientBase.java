@@ -15,7 +15,6 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 public abstract class PubApiClientBase {
-    private static final String CHESS_COM_API_URL_BASE = "https://api.chess.com/pub/";
 
     private final CloseableHttpClient httpClient;
 
@@ -31,8 +30,7 @@ public abstract class PubApiClientBase {
     }
 
     String getRequest(String endpoint) throws IOException, ChessComPubApiException {
-        String fullUrl = CHESS_COM_API_URL_BASE + endpoint;
-        HttpGet request = new HttpGet(fullUrl);
+        HttpGet request = new HttpGet(endpoint);
 
         CloseableHttpResponse response = httpClient.execute(request);
         int statusCode = response.getStatusLine().getStatusCode();

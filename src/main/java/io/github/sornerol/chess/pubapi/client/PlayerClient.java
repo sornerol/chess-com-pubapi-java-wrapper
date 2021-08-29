@@ -13,7 +13,14 @@ import java.io.IOException;
 import java.util.List;
 
 public class PlayerClient extends PubApiClientBase {
-    private static final String ENDPOINT_BASE = "player";
+    private static final String ENDPOINT_BASE = "https://api.chess.com/pub/player";
+
+    public Player loadPlayerFromApiUrl(String url) throws IOException, ChessComPubApiException {
+        if (!url.startsWith(ENDPOINT_BASE)) {
+            throw new ChessComPubApiException("URL is not a valid player profile URL");
+        }
+        return getRequest(url, Player.class);
+    }
 
     public Player loadPlayer(String username) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s", ENDPOINT_BASE, username);
