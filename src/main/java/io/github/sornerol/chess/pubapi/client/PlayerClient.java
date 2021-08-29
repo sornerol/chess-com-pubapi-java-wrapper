@@ -15,24 +15,24 @@ import java.util.List;
 public class PlayerClient extends PubApiClientBase {
     private static final String ENDPOINT_BASE = "https://api.chess.com/pub/player";
 
-    public Player loadPlayerFromApiUrl(String url) throws IOException, ChessComPubApiException {
+    public Player getPlayerFromApiUrl(String url) throws IOException, ChessComPubApiException {
         if (!url.startsWith(ENDPOINT_BASE)) {
             throw new ChessComPubApiException("URL is not a valid player profile URL");
         }
         return getRequest(url, Player.class);
     }
 
-    public Player loadPlayer(String username) throws IOException, ChessComPubApiException {
+    public Player getPlayerByUsername(String username) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s", ENDPOINT_BASE, username);
         return getRequest(endpoint, Player.class);
     }
 
-    public List<String> playersWithTitle(Title title) throws IOException, ChessComPubApiException {
+    public List<String> getPlayersWithTitle(Title title) throws IOException, ChessComPubApiException {
         String endpoint = String.format("titled/%s", title);
         return getRequest(endpoint, PlayerList.class).getPlayers();
     }
 
-    public PlayerStats statsForPlayer(String username) throws IOException, ChessComPubApiException{
+    public PlayerStats getStatsForPlayer(String username) throws IOException, ChessComPubApiException{
         String endpoint = String.format("%s/%s/stats", ENDPOINT_BASE, username);
         return getRequest(endpoint, PlayerStats.class);
     }
@@ -42,22 +42,22 @@ public class PlayerClient extends PubApiClientBase {
         return getRequest(endpoint, PlayerOnline.class).getOnline();
     }
 
-    public GameList currentDailyChessGamesForPlayer(String username) throws IOException, ChessComPubApiException {
+    public GameList getCurrentDailyChessGamesForPlayer(String username) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s/games", ENDPOINT_BASE, username);
         return getRequest(endpoint, GameList.class);
     }
 
-    public GameList toMoveDailyChessGamesForPlayer(String username) throws IOException, ChessComPubApiException {
+    public GameList getToMoveDailyChessGamesForPlayer(String username) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s/games/to-move", ENDPOINT_BASE, username);
         return getRequest(endpoint, GameList.class);
     }
 
-    public ArchiveApiUrlList monthlyArchivesAvailableForPlayer(String username) throws IOException, ChessComPubApiException {
+    public ArchiveApiUrlList getMonthlyArchivesAvailableForPlayer(String username) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s/games/archives", ENDPOINT_BASE, username);
         return getRequest(endpoint, ArchiveApiUrlList.class);
     }
 
-    public ArchiveGameList monthlyArchiveForPlayer(String username,
+    public ArchiveGameList getMonthlyArchiveForPlayer(String username,
                                                   Integer year,
                                                   Integer month) throws IOException, ChessComPubApiException {
         if (month < 1 || month > 12) {
@@ -67,7 +67,7 @@ public class PlayerClient extends PubApiClientBase {
         return getRequest(endpoint, ArchiveGameList.class);
     }
 
-    public String monthlyPgnArciveForPlayer(String username,
+    public String getMonthlyArchiveForPlayerAsPgn(String username,
                                       Integer year,
                                       Integer month) throws IOException, ChessComPubApiException {
         if (month < 1 || month > 12) {

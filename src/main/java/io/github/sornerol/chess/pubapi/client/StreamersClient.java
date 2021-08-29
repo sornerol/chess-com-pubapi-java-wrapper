@@ -9,7 +9,7 @@ public class StreamersClient extends PubApiClientBase {
 
     private static final String ENDPOINT_BASE = "https://api.chess.com/pub/streamers";
 
-    public StreamersList loadStreamers() throws IOException, ChessComPubApiException {
+    public StreamersList getStreamers() throws IOException, ChessComPubApiException {
         return getRequest(ENDPOINT_BASE, StreamersList.class);
     }
 }

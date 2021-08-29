@@ -9,7 +9,7 @@ public class LeaderboardsClient extends PubApiClientBase {
 
     private static final String ENDPOINT_BASE = "https://api.chess.com/pub/leaderboards";
 
-    public Leaderboards loadLeaderboards() throws IOException, ChessComPubApiException {
+    public Leaderboards getLeaderboards() throws IOException, ChessComPubApiException {
         return getRequest(ENDPOINT_BASE, Leaderboards.class);
     }
 }
