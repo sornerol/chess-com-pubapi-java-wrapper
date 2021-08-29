@@ -60,6 +60,9 @@ public class PlayerClient extends PubApiClientBase {
     public ArchiveGameList monthlyArchiveForPlayer(String username,
                                                   Integer year,
                                                   Integer month) throws IOException, ChessComPubApiException {
+        if (month < 1 || month > 12) {
+            throw new ChessComPubApiException("Month must be between 1 and 12");
+        }
         String endpoint = String.format("%s/%s/games/%04d/%02d", ENDPOINT_BASE, username, year, month);
         return getRequest(endpoint, ArchiveGameList.class);
     }
@@ -67,6 +70,9 @@ public class PlayerClient extends PubApiClientBase {
     public String monthlyPgnArciveForPlayer(String username,
                                       Integer year,
                                       Integer month) throws IOException, ChessComPubApiException {
+        if (month < 1 || month > 12) {
+            throw new ChessComPubApiException("Month must be between 1 and 12");
+        }
         String endpoint = String.format("%s/%s/games/%04d/%02d/pgn", ENDPOINT_BASE, username, year, month);
         return getRequest(endpoint);
     }
