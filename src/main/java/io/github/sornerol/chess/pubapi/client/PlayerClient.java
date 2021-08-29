@@ -6,7 +6,9 @@ import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
 import io.github.sornerol.chess.pubapi.domain.player.game.ArchiveApiUrlList;
 import io.github.sornerol.chess.pubapi.domain.player.game.ArchiveGameList;
 import io.github.sornerol.chess.pubapi.domain.player.game.GameList;
+import io.github.sornerol.chess.pubapi.domain.player.match.MatchHistory;
 import io.github.sornerol.chess.pubapi.domain.player.stats.PlayerStats;
+import io.github.sornerol.chess.pubapi.domain.player.tournament.TournamentHistory;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 
 import java.io.IOException;
@@ -77,12 +79,18 @@ public class PlayerClient extends PubApiClientBase {
         return getRequest(endpoint);
     }
 
-    public ClubList clubsForPlayer(String username) throws  IOException, ChessComPubApiException {
+    public ClubList getClubsForPlayer(String username) throws  IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s/clubs", ENDPOINT_BASE, username);
         return getRequest(endpoint, ClubList.class);
     }
 
-    //player's team matches
+    public MatchHistory getTeamMatchesForPlayer(String username) throws IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/matches", ENDPOINT_BASE, username);
+        return getRequest(endpoint, MatchHistory.class);
+    }
 
-    //player's tournaments
+    public TournamentHistory getTournamentsForPlayer(String username) throws IOException, ChessComPubApiException {
+        String endpoint = String.format("%s/%s/tournaments", ENDPOINT_BASE, username);
+        return getRequest(endpoint, TournamentHistory.class);
+    }
 }
