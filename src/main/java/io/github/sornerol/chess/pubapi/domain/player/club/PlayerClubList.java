@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class ClubList {
+public class PlayerClubList {
     @JsonProperty("clubs")
-    private List<Club> clubs;
+    private List<PlayerClub> clubs;
 }

@@ -8,7 +8,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Club {
+public class PlayerClub {
     @JsonProperty("@id")
     private String id;
 

@@ -1,7 +1,7 @@
 package io.github.sornerol.chess.pubapi.client;
 
 import io.github.sornerol.chess.pubapi.domain.player.*;
-import io.github.sornerol.chess.pubapi.domain.player.club.ClubList;
+import io.github.sornerol.chess.pubapi.domain.player.club.PlayerClubList;
 import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
 import io.github.sornerol.chess.pubapi.domain.player.game.ArchiveApiUrlList;
 import io.github.sornerol.chess.pubapi.domain.player.game.ArchiveGameList;
@@ -79,9 +79,9 @@ public class PlayerClient extends PubApiClientBase {
         return getRequest(endpoint);
     }
 
-    public ClubList getClubsForPlayer(String username) throws  IOException, ChessComPubApiException {
+    public PlayerClubList getClubsForPlayer(String username) throws  IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s/clubs", ENDPOINT_BASE, username);
-        return getRequest(endpoint, ClubList.class);
+        return getRequest(endpoint, PlayerClubList.class);
     }
 
     public MatchHistory getTeamMatchesForPlayer(String username) throws IOException, ChessComPubApiException {
