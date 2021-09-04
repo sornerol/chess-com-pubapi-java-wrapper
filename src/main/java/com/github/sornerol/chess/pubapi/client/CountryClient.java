@@ -13,6 +13,9 @@ import java.util.List;
  */
 public class CountryClient extends PubApiClientBase {
 
+    /**
+     * The base URL of the endpoint queried by requests from this client (https://api.chess.com/pub/country).
+     */
     private static final String ENDPOINT_BASE = "https://api.chess.com/pub/country";
 
     /**Fetch country information from a country PubAPI URL.
