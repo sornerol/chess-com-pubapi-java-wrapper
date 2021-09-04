@@ -1,6 +1,7 @@
 package io.github.sornerol.chess.pubapi.domain.club;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.github.sornerol.chess.pubapi.domain.club.enums.ClubVisibility;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -39,7 +40,7 @@ public class Club {
     private Long lastActivity;
 
     @JsonProperty("visibility")
-    private String visibility;
+    private ClubVisibility visibility;
 
     @JsonProperty("join_request")
     private String joinRequestUrl;
