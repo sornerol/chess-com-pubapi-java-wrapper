@@ -1,6 +1,7 @@
 package io.github.sornerol.chess.pubapi.domain.player.tournament;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.github.sornerol.chess.pubapi.domain.player.enums.PlayerTournamentStatus;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -31,7 +32,7 @@ public class TournamentResult {
     private Integer placement;
 
     @JsonProperty("status")
-    private String status;
+    private PlayerTournamentStatus status;
 
     @JsonProperty("total_players")
     private Integer totalPlayers;

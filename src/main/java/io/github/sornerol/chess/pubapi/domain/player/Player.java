@@ -1,6 +1,8 @@
 package io.github.sornerol.chess.pubapi.domain.player;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.github.sornerol.chess.pubapi.domain.player.enums.MembershipStatus;
+import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -23,10 +25,10 @@ public class Player {
     private Integer playerId;
 
     @JsonProperty("title")
-    private String title;
+    private Title title;
 
     @JsonProperty("status")
-    private String status;
+    private MembershipStatus membershipStatus;
 
     @JsonProperty("name")
     private String name;
@@ -57,5 +59,4 @@ public class Player {
 
     @JsonProperty("fide")
     private Integer fideRating;
-
 }
