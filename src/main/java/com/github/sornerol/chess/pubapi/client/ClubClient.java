@@ -7,7 +7,7 @@ import com.github.sornerol.chess.pubapi.domain.club.ClubMembers;
 
 import java.io.IOException;
 
-/**
+/**Client for fetching data about Chess.com clubs.
  * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-endpoint-club">Chess.com PubAPI documentation</a>
  */
 public class ClubClient extends PubApiClientBase {

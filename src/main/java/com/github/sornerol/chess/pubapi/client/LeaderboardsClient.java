@@ -5,7 +5,7 @@ import com.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 
 import java.io.IOException;
 
-/**
+/**Client for fetching Chess.com leaderboards.
  * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-leaderboards">Chess.com PubAPI documentation</a>
  */
 public class LeaderboardsClient extends PubApiClientBase {

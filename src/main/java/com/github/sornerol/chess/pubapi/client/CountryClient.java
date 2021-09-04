@@ -8,7 +8,7 @@ import com.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 import java.io.IOException;
 import java.util.List;
 
-/**
+/**Client for fetching data related to the countries recognized by the Chess.com platform.
  * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-endpoint-country">Chess.com PubAPI documentation</a>
  */
 public class CountryClient extends PubApiClientBase {
@@ -20,8 +20,7 @@ public class CountryClient extends PubApiClientBase {
 
     /**Fetch country information from a country PubAPI URL.
      *
-     * @param url Chess.com PubAPI URL to country
-     * @return {@link Country} returned by Chess.com.
+     .     * @return {@link Country} returned by Chess.com.
      * @throws IOException if there is a problem connecting to Chess.com.
      * @throws ChessComPubApiException if the URL is not valid, or if Chess.com returns a non-success response code.
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-endpoint-country-profile">Chess.com PubAPI documentation</a>
