@@ -40,7 +40,7 @@ public class CountryClient extends PubApiClientBase {
      *                for a list of additional "user-assigned codes" recognized by Chess.com.
      * @return {@link Country} returned by Chess.com.
      * @throws IOException if there is a problem connecting to Chess.com.
-     * @throws ChessComPubApiException if the URL is not valid, or if Chess.com returns a non-success response code.
+     * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-endpoint-country-profile">Chess.com PubAPI documentation</a>
      */
     public Country getCountryByIsoCode(String isoCode) throws IOException, ChessComPubApiException {
@@ -55,7 +55,7 @@ public class CountryClient extends PubApiClientBase {
      *                for a list of additional "user-assigned codes" recognized by Chess.com.
      * @return A list of Chess.com usernames.
      * @throws IOException if there is a problem connecting to Chess.com.
-     * @throws ChessComPubApiException if the URL is not valid, or if Chess.com returns a non-success response code.
+     * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-endpoint-country-players">Chess.com PubAPI documentation</a>
      */
     public List<String> getNewAndActivePlayersForCountry(String isoCode) throws IOException, ChessComPubApiException {
@@ -70,7 +70,7 @@ public class CountryClient extends PubApiClientBase {
      *                for a list of additional "user-assigned codes" recognized by Chess.com.
      * @return A list of club PubAPI URLs.
      * @throws IOException if there is a problem connecting to Chess.com.
-     * @throws ChessComPubApiException if the URL is not valid, or if Chess.com returns a non-success response code.
+     * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-endpoint-country-clubs">Chess.com PubAPI documentation</a>
      */
     public List<String> geClubApiUrlsForCountry(String isoCode) throws IOException, ChessComPubApiException {
