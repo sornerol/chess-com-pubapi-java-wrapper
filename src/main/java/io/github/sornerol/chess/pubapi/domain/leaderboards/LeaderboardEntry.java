@@ -1,6 +1,8 @@
 package io.github.sornerol.chess.pubapi.domain.leaderboards;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.github.sornerol.chess.pubapi.domain.player.enums.MembershipStatus;
+import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -31,13 +33,13 @@ public class LeaderboardEntry {
     private String countryApiUrl;
 
     @JsonProperty("title")
-    private String title;
+    private Title title;
 
     @JsonProperty("name")
     private String name;
 
     @JsonProperty("status")
-    private String status;
+    private MembershipStatus membershipStatus;
 
     @JsonProperty("avatar")
     private String avatarUrl;

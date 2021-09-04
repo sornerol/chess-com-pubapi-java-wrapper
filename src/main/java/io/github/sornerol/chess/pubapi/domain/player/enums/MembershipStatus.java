@@ -3,23 +3,17 @@ package io.github.sornerol.chess.pubapi.domain.player.enums;
 import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
-public enum Title {
-    GM("GM"),
-    WGM("WGM"),
-    IM("IM"),
-    WIM("WIM"),
-    FM("FM"),
-    WFM("WFM"),
-    NM("NM"),
-    WNM("WNM"),
-    CM("CM"),
-    WCM("WCM");
+public enum MembershipStatus {
+    BASIC("basic"),
+    PREMIUM("premium"),
+    MOD("mod"),
+    STAFF("staff");
 
     @Getter
     @JsonValue
     private final String value;
 
-    Title(String value) {
+    MembershipStatus(String value) {
         this.value = value;
     }
 }
