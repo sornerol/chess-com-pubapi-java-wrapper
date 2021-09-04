@@ -39,6 +39,13 @@ public class PlayerClient extends PubApiClientBase {
         return getRequest(endpoint, PlayerStats.class);
     }
 
+    public PlayerStats getStatsForPlayerFromApiUrl(String url) throws IOException, ChessComPubApiException{
+        if (!url.startsWith(ENDPOINT_BASE) || !url.endsWith("/stats")) {
+            throw new ChessComPubApiException("URL is not a valid player stats URL");
+        }
+        return getRequest(url, PlayerStats.class);
+    }
+
     public Boolean isPlayerOnline(String username) throws IOException, ChessComPubApiException {
         String endpoint = String.format("%s/%s/is-online", ENDPOINT_BASE, username);
         return getRequest(endpoint, PlayerOnline.class).getOnline();
