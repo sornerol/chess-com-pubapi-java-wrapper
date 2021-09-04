@@ -1,6 +1,8 @@
 package io.github.sornerol.chess.pubapi.domain.game;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.github.sornerol.chess.pubapi.domain.game.enums.Rules;
+import io.github.sornerol.chess.pubapi.domain.game.enums.TimeClass;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -23,7 +25,7 @@ public abstract class GameBase {
     private String timeControl;
 
     @JsonProperty("time_class")
-    private String timeClass;
+    private TimeClass timeClass;
 
     @JsonProperty("rated")
     private Boolean rated;
@@ -32,7 +34,7 @@ public abstract class GameBase {
     private Long startTime;
 
     @JsonProperty("rules")
-    private String rules;
+    private Rules rules;
 
     @JsonProperty("tournament")
     private String tournamentApiUrl;

@@ -7,7 +7,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 public class ArchiveGame extends GameBase {
     @JsonProperty("white")
     private PlayerDetail white;

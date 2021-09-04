@@ -7,7 +7,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 public class Game extends GameBase {
     @JsonProperty("move_by")
     private Long moveBy;
