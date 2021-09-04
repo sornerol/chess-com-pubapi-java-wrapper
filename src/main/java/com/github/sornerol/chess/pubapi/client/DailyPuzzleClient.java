@@ -19,7 +19,7 @@ public class DailyPuzzleClient extends PubApiClientBase {
      *
      * @return Today's {@link DailyPuzzle}.
      * @throws IOException if there is a problem connecting to Chess.com.
-     * @throws ChessComPubApiException if the URL is not valid, or if Chess.com returns a non-success response code.
+     * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-daily-puzzle">Chess.com PubAPI documentation</a>
      */
     public DailyPuzzle getTodaysDailyPuzzle() throws IOException, ChessComPubApiException {
@@ -31,7 +31,7 @@ public class DailyPuzzleClient extends PubApiClientBase {
      *
      * @return A random {@link DailyPuzzle}.
      * @throws IOException if there is a problem connecting to Chess.com.
-     * @throws ChessComPubApiException if the URL is not valid, or if Chess.com returns a non-success response code.
+     * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-random-daily-puzzle">Chess.com PubAPI documentation</a>
      */
     public DailyPuzzle getRandomDailyPuzzle() throws IOException, ChessComPubApiException {
