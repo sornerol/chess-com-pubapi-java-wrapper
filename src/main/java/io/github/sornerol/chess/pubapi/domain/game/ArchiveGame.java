@@ -19,7 +19,7 @@ public class ArchiveGame extends GameBase {
     private Long endTime;
 
     @JsonProperty("eco")
-    private String ecoApiUrl;
+    private String ecoUrl;
 
     @JsonProperty("accuracies")
     private Accuracies accuracies;
