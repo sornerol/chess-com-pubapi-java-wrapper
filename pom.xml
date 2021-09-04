@@ -4,9 +4,32 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.github.sornerol</groupId>
+    <groupId>com.github.sornerol</groupId>
     <artifactId>chesscom-pubapi-wrapper</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>A wrapper for Chess.com's PubAPI.</description>
+    <url>https://github.com/sornerol/chess-com-pubapi-java-wrapper</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Loren Jamison</name>
+            <email>loren@lorenjamison.com</email>
+            <url>https://github.com/sornerol</url>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/sornerol/chess-com-pubapi-java-wrapper.git</connection>
+        <developerConnection>scm:git:ssh://github.com:sornerol/chess-com-pubapi-java-wrapper.git</developerConnection>
+        <url>http://github.com/sornerol/chess-com-pubapi-java-wrapper/tree/main</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
