@@ -14,22 +14,22 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-public abstract class PubApiClientBase {
+abstract class PubApiClientBase {
 
     private final CloseableHttpClient httpClient;
 
-    public PubApiClientBase() {
+    protected PubApiClientBase() {
         httpClient = HttpClients.createDefault();
     }
 
-    <T> T getRequest(String endpoint, Class<T> clazz) throws IOException, ChessComPubApiException {
+    protected <T> T getRequest(String endpoint, Class<T> clazz) throws IOException, ChessComPubApiException {
         String responseJson = getRequest(endpoint);
 
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(responseJson, clazz);
     }
 
-    String getRequest(String endpoint) throws IOException, ChessComPubApiException {
+    protected String getRequest(String endpoint) throws IOException, ChessComPubApiException {
         HttpGet request = new HttpGet(endpoint);
 
         String responseBody;
