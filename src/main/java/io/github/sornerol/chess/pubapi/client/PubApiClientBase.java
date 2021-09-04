@@ -32,13 +32,16 @@ public abstract class PubApiClientBase {
     String getRequest(String endpoint) throws IOException, ChessComPubApiException {
         HttpGet request = new HttpGet(endpoint);
 
-        CloseableHttpResponse response = httpClient.execute(request);
-        int statusCode = response.getStatusLine().getStatusCode();
-        //TODO: Handle rate throttling more gracefully
-        if (statusCode != ResponseCode.OK.getValue()) {
-            throw new ChessComPubApiException("Error executing GET request: API returned status code " + statusCode);
+        String responseBody;
+        try (CloseableHttpResponse response = httpClient.execute(request)) {
+            int statusCode = response.getStatusLine().getStatusCode();
+            //TODO: Handle rate throttling more gracefully
+            if (statusCode != ResponseCode.OK.getValue()) {
+                throw new ChessComPubApiException("Error executing GET request: API returned status code " + statusCode);
+            }
+            InputStream inputStream = response.getEntity().getContent();
+            responseBody = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
         }
-        InputStream inputStream = response.getEntity().getContent();
-        return IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+        return responseBody;
     }
 }
