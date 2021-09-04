@@ -7,6 +7,8 @@ public enum MembershipStatus {
     BASIC("basic"),
     PREMIUM("premium"),
     MOD("mod"),
+    CLOSED("closed"),
+    CLOSED_FAIR_PLAY("closed:fair_play_violations"),
     STAFF("staff");
 
     @Getter
