@@ -13,10 +13,6 @@ import java.io.IOException;
  * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-endpoint-club">Chess.com PubAPI documentation</a>
  */
 public class ClubClient extends PubApiClientBase {
-
-    /**
-     * The base URL of the endpoint queried by requests from this client (https://api.chess.com/pub/club).
-     */
     private static final String ENDPOINT_BASE = "https://api.chess.com/pub/club";
 
     /**
