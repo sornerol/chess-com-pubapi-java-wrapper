@@ -5,7 +5,9 @@ import com.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 
 import java.io.IOException;
 
-/**Client for fetching daily puzzles.
+/**
+ * Client for fetching daily puzzles.
+ *
  * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-daily-puzzle">Chess.com PubAPI documentation</a>
  */
 public class DailyPuzzleClient extends PubApiClientBase {
@@ -15,10 +17,11 @@ public class DailyPuzzleClient extends PubApiClientBase {
      */
     private static final String ENDPOINT_BASE = "https://api.chess.com/pub/puzzle";
 
-    /**Fetch today's daily puzzle
+    /**
+     * Fetch today's daily puzzle
      *
      * @return Today's {@link DailyPuzzle}.
-     * @throws IOException if there is a problem connecting to Chess.com.
+     * @throws IOException             if there is a problem connecting to Chess.com.
      * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-daily-puzzle">Chess.com PubAPI documentation</a>
      */
@@ -26,11 +29,12 @@ public class DailyPuzzleClient extends PubApiClientBase {
         return getRequest(ENDPOINT_BASE, DailyPuzzle.class);
     }
 
-    /**Fetch a random daily puzzle. Note that, according to Chess.com's API documentation, this endpoint has around 15 seconds
+    /**
+     * Fetch a random daily puzzle. Note that, according to Chess.com's API documentation, this endpoint has around 15 seconds
      * of caching latency.
      *
      * @return A random {@link DailyPuzzle}.
-     * @throws IOException if there is a problem connecting to Chess.com.
+     * @throws IOException             if there is a problem connecting to Chess.com.
      * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-random-daily-puzzle">Chess.com PubAPI documentation</a>
      */

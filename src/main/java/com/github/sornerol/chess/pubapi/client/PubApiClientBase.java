@@ -3,7 +3,6 @@ package com.github.sornerol.chess.pubapi.client;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.sornerol.chess.pubapi.client.enums.ResponseCode;
 import com.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
-
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -25,13 +24,14 @@ abstract class PubApiClientBase {
         httpClient = HttpClients.createDefault();
     }
 
-    /**Execute a GET request on the specified endpoint and deserialize the response into a domain object.
+    /**
+     * Execute a GET request on the specified endpoint and deserialize the response into a domain object.
      *
      * @param endpoint The full Chess.com PubAPI URL.
-     * @param clazz The class of the object to return.
-     * @param <T> TDescribes the type parameter.
+     * @param clazz    The class of the object to return.
+     * @param <T>      TDescribes the type parameter.
      * @return The deserialized object of the type specified.
-     * @throws IOException if there is a problem connecting to Chess.com.
+     * @throws IOException             if there is a problem connecting to Chess.com.
      * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      */
     protected <T> T getRequest(String endpoint, Class<T> clazz) throws IOException, ChessComPubApiException {
@@ -41,11 +41,12 @@ abstract class PubApiClientBase {
         return objectMapper.readValue(responseJson, clazz);
     }
 
-    /**Execute a GET request on the specified endpoint and return the response as a String.
+    /**
+     * Execute a GET request on the specified endpoint and return the response as a String.
      *
      * @param endpoint The full Chess.com PubAPI URL.
      * @return The deserialized object of the type specified.
-     * @throws IOException if there is a problem connecting to Chess.com.
+     * @throws IOException             if there is a problem connecting to Chess.com.
      * @throws ChessComPubApiException if Chess.com returns a non-success response code.
      */
     protected String getRequest(String endpoint) throws IOException, ChessComPubApiException {
