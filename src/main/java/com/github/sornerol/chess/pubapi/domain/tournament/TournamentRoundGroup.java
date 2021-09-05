@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class TournamentGroup {
+public class TournamentRoundGroup {
     @JsonProperty("fair_play_removals")
     private List<String> fairPlayRemovals;
 
