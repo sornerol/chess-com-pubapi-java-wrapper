@@ -15,8 +15,7 @@ import java.util.List;
 @Setter
 public class StreamersList {
     /**
-     * @param streamers A list of Chess.com streamers.
-     * @return A list of Chess.com streamers.
+     * A list of Chess.com streamers.
      */
     @JsonProperty("streamers")
     private List<Streamer> streamers;
