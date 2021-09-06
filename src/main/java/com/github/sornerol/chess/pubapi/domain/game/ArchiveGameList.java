@@ -7,10 +7,16 @@ import lombok.ToString;
 
 import java.util.List;
 
+/**
+ * Wrapper class for retrieving a list of archive games
+ */
 @Getter
 @Setter
 @ToString
 public class ArchiveGameList {
+    /**
+     * List of archive games
+     */
     @JsonProperty("games")
    private List<ArchiveGame> games;
 }

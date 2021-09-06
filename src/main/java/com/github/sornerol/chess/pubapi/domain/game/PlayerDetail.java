@@ -1,21 +1,39 @@
 package com.github.sornerol.chess.pubapi.domain.game;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.sornerol.chess.pubapi.domain.game.enums.GameResult;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * Details about a player of an {@link ArchiveGame}
+ */
+@Getter
+@Setter
 @ToString
 public class PlayerDetail {
+    /**
+     * Player's rating
+     */
     @JsonProperty("rating")
-    @Getter @Setter private Integer rating;
+    private Integer rating;
 
+    /**
+     * Player's game result
+     */
     @JsonProperty("result")
-    @Getter @Setter private String result;
+    private GameResult result;
 
+    /**
+     * Link to player's PubAPI profile
+     */
     @JsonProperty("@id")
-    @Getter @Setter private String id;
+    private String playerApiUrl;
 
+    /**
+     * Player's username
+     */
     @JsonProperty("username")
-    @Getter @Setter private String username;
+    private String username;
 }

@@ -7,10 +7,16 @@ import lombok.ToString;
 
 import java.util.List;
 
+/**
+ * Wrapper class for monthly archives API URLs
+ */
 @Getter
 @Setter
 @ToString
 public class ArchiveApiUrlList {
+    /**
+     * List of monthly archive PubAPI URLs
+     */
     @JsonProperty("archives")
     private List<String> archiveApiUrls;
 }
