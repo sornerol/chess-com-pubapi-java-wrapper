@@ -9,22 +9,22 @@ import lombok.Getter;
  */
 public enum TimeClass {
     /**
-     * Daily (1-14 days/move)
+     * Daily (1 to 14 days/move)
      */
     DAILY("daily"),
 
     /**
-     * Rapid (> 10 minutes/player)
+     * Rapid (greater than 10 minutes/player)
      */
     RAPID("rapid"),
 
     /**
-     * Blitz (3 - 10 minutes/player)
+     * Blitz (3 to 10 minutes/player)
      */
     BLITZ("blitz"),
 
     /**
-     * Bullet (<3 minutes/player)
+     * Bullet (less than 3 minutes/player)
      */
     BULLET("bullet");
 
