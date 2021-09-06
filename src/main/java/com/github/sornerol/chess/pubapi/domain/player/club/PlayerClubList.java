@@ -7,10 +7,16 @@ import lombok.ToString;
 
 import java.util.List;
 
+/**
+ * Wrapper class for retrieving a player's joined club list
+ */
 @Getter
 @Setter
 @ToString
 public class PlayerClubList {
+    /**
+     * List of clubs for a player
+     */
     @JsonProperty("clubs")
     private List<PlayerClub> clubs;
 }

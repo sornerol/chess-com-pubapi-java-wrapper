@@ -7,10 +7,16 @@ import lombok.ToString;
 
 import java.util.List;
 
+/**
+ * Wrapper class for getting a list of player usernames
+ */
 @Getter
 @Setter
 @ToString
 public class PlayerList {
+    /**
+     * List of player usernames
+     */
     @JsonProperty("players")
     private List<String> players;
 }
