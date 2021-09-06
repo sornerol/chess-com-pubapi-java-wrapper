@@ -7,10 +7,16 @@ import lombok.ToString;
 
 import java.util.List;
 
+/**
+ * Wrapper class for returning a list of clubs
+ */
 @Getter
 @Setter
 @ToString
 public class ClubList {
+    /**
+     * List of club PubAPI URLs
+     */
     @JsonProperty("clubs")
     List<String> clubsApiUrls;
 }

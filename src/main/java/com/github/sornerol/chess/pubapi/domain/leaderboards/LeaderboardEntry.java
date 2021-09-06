@@ -15,7 +15,7 @@ import lombok.ToString;
 @Setter
 public class LeaderboardEntry {
     /**
-     * The player's internal ID
+     * The player's non-changing internal Chess.com ID
      */
     @JsonProperty("player_id")
     private Integer playerId;

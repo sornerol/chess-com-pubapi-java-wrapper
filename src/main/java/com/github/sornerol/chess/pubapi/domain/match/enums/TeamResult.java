@@ -15,7 +15,12 @@ public enum TeamResult {
     /**
      * Team lost
      */
-    LOSE("lose");
+    LOSE("lose"),
+
+    /**
+     * Teams tied
+     */
+    DRAW("draw");
 
     @Getter
     @JsonValue
