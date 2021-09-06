@@ -63,12 +63,12 @@ public enum GameResult {
     ABANDONED("abandoned"),
 
     /**
-     * Player won king of the hill
+     * Opponent's king reached the hill
      */
     KING_OF_THE_HILL("kingofthehill"),
 
     /**
-     * Player won three-check game
+     * Player lost three-check game by being checked for the third time
      */
     THREE_CHECK("threecheck"),
 
