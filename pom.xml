@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.sornerol</groupId>
+    <groupId>io.github.sornerol</groupId>
     <artifactId>chesscom-pubapi-wrapper</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
@@ -34,14 +34,14 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <jackson.version>2.12.5</jackson.version>
+        <jackson.version>2.13.2</jackson.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
+            <version>1.18.22</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson</groupId>
