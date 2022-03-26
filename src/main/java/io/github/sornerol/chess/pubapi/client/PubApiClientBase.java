@@ -3,20 +3,34 @@ package io.github.sornerol.chess.pubapi.client;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.sornerol.chess.pubapi.client.enums.ResponseCode;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.io.IOUtils;
+import org.apache.http.Header;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicHeader;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 /**
- * The base class of all of the PubAPI client classes.
+ * The base class of all the PubAPI client classes.
  */
 abstract class PubApiClientBase {
+
+    /**
+     * If supplied, the userAgent value will be passed in the User-Agent header when making requests to Chess.com.
+     * By specifying this value with your contact information, Chess.com can contact you in the event they need to
+     * block access for your application.
+     * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-general-rate-limits">Rate Limiting</a>
+     */
+    @Getter
+    @Setter
+    private String userAgent;
 
     private final CloseableHttpClient httpClient;
 
@@ -51,6 +65,9 @@ abstract class PubApiClientBase {
      */
     protected String getRequest(String endpoint) throws IOException, ChessComPubApiException {
         HttpGet request = new HttpGet(endpoint);
+        if (userAgent != null) {
+            request.addHeader(new BasicHeader("User-Agent", userAgent));
+        }
 
         String responseBody;
         try (CloseableHttpResponse response = httpClient.execute(request)) {
