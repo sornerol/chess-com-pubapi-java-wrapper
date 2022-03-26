@@ -1,5 +1,6 @@
 # Chess.com PubAPI Wrapper for Java
 [![javadoc](https://javadoc.io/badge2/io.github.sornerol/chesscom-pubapi-wrapper/javadoc.svg)](https://javadoc.io/doc/io.github.sornerol/chesscom-pubapi-wrapper)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.sornerol/chesscom-pubapi-wrapper/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.sornerol/chesscom-pubapi-wrapper)
 
 A Java wrapper for Chess.com's public data API (PubAPI)
 
