@@ -1,5 +1,6 @@
 package io.github.sornerol.chess.pubapi.client;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.sornerol.chess.pubapi.client.enums.ResponseCode;
 import io.github.sornerol.chess.pubapi.client.enums.RetryStrategy;
@@ -100,6 +101,7 @@ abstract class PubApiClientBase {
         String responseJson = getRequest(endpoint);
 
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return objectMapper.readValue(responseJson, clazz);
     }
 
