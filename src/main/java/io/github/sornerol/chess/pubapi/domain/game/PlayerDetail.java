@@ -5,6 +5,7 @@ import io.github.sornerol.chess.pubapi.domain.game.enums.GameResult;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.jetbrains.annotations.ApiStatus;
 
 /**
  * Details about a player of an {@link ArchiveGame}
@@ -36,4 +37,12 @@ public class PlayerDetail {
      */
     @JsonProperty("username")
     private String username;
+    
+    /**
+     * The uuid of the Player
+     */
+    //TODO Check if the String can replace throw a UUID
+    @ApiStatus.Experimental
+    @JsonProperty("uuid")
+    private String uuid;
 }
