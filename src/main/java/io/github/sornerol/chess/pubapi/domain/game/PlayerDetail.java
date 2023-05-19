@@ -36,4 +36,11 @@ public class PlayerDetail {
      */
     @JsonProperty("username")
     private String username;
+    
+    /**
+     * The uuid of the Player
+     */
+    //TODO Check if the String can replace throw a UUID
+    @JsonProperty("uuid")
+    private String uuid;
 }
