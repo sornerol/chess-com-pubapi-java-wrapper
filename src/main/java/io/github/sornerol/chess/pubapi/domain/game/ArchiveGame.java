@@ -62,5 +62,5 @@ public class ArchiveGame extends GameBase {
      */
     @ApiStatus.Experimental
     @JsonProperty("initial_setup")
-    private String initial_setup;
+    private String initialSetup;
 }
