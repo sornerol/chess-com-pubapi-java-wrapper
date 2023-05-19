@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.UUID;
+
 /**
  * Details about a player of an {@link ArchiveGame}
  */
@@ -38,9 +40,8 @@ public class PlayerDetail {
     private String username;
     
     /**
-     * The uuid of the Player
+     * The uuid of the player
      */
-    //TODO Check if the String can replace throw a UUID
     @JsonProperty("uuid")
-    private String uuid;
+    private UUID uuid;
 }
