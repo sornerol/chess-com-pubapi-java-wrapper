@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.jetbrains.annotations.ApiStatus;
 
 /**
  * Information about a completed game
@@ -53,14 +52,12 @@ public class ArchiveGame extends GameBase {
      * The UUID of the Player
      */
     //TODO Check if this can be replaced by a UUID
-    @ApiStatus.Experimental
     @JsonProperty("uuid")
     private String uuid;
 
     /**
      * The Setup
      */
-    @ApiStatus.Experimental
     @JsonProperty("initial_setup")
     private String initialSetup;
 }
