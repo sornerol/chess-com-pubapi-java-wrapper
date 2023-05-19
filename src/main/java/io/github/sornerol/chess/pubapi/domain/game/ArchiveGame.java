@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.UUID;
+
 /**
  * Information about a completed game
  */
@@ -43,20 +45,19 @@ public class ArchiveGame extends GameBase {
     private Accuracies accuracies;
     
     /**
-     * The Tcn
+     * The move list in TCN encoding
      */
     @JsonProperty("tcn")
     private String tcn;
 
     /**
-     * The UUID of the Player
+     * The UUID of the game
      */
-    //TODO Check if this can be replaced by a UUID
     @JsonProperty("uuid")
-    private String uuid;
+    private UUID uuid;
 
     /**
-     * The Setup
+     * A FEN string representing the initial board setup
      */
     @JsonProperty("initial_setup")
     private String initialSetup;
