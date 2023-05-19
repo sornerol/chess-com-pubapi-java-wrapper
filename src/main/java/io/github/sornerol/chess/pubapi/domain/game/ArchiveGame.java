@@ -41,4 +41,23 @@ public class ArchiveGame extends GameBase {
      */
     @JsonProperty("accuracies")
     private Accuracies accuracies;
+    
+    /**
+     * The Tcn
+     */
+    @JsonProperty("tcn")
+    private String tcn;
+
+    /**
+     * The UUID of the Player
+     */
+    //TODO Check if this can be replaced by a UUID
+    @JsonProperty("uuid")
+    private String uuid;
+
+    /**
+     * The Setup
+     */
+    @JsonProperty("initial_setup")
+    private String initialSetup;
 }
