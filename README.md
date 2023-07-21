@@ -18,7 +18,7 @@ Add the following dependency to the dependencies section of your project's `pom.
     <dependency>
         <groupId>io.github.sornerol</groupId>
         <artifactId>chesscom-pubapi-wrapper</artifactId>
-        <version>1.3.0</version>
+        <version>1.4.0</version>
     </dependency>
 </dependencies
 ```
@@ -27,7 +27,7 @@ Add the following dependency to the dependencies section of your project's `buil
 ```
 dependencies {
     // other project dependencies...
-    implementation 'io.github.sornerol:chesscom-pubapi-wrapper:1.3.0'
+    implementation 'io.github.sornerol:chesscom-pubapi-wrapper:1.4.0'
 }
 ```
 
@@ -62,3 +62,9 @@ public class Main {
     }
 }
 ```
+
+# Requesting New Fields
+Chess.com adds new fields to the PubAPI from time to time. If there is a new field in the API you need access to, feel free to open an issue. I can usually have the new field added within a day or two.
+
+# Get Involved
+If you're interested in helping out, start by reviewing [CONTRIBUTING.md](https://github.com/sornerol/chess-com-pubapi-java-wrapper/blob/main/CONTRIBUTING.md). All help is appreciated!
