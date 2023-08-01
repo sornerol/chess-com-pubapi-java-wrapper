@@ -14,6 +14,11 @@ public enum TimeClass {
     DAILY("daily"),
 
     /**
+     * Standard
+     */
+    STANDARD("standard"),
+
+    /**
      * Rapid (greater than 10 minutes/player)
      */
     RAPID("rapid"),
