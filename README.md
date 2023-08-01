@@ -18,7 +18,7 @@ Add the following dependency to the dependencies section of your project's `pom.
     <dependency>
         <groupId>io.github.sornerol</groupId>
         <artifactId>chesscom-pubapi-wrapper</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
     </dependency>
 </dependencies
 ```
@@ -27,7 +27,7 @@ Add the following dependency to the dependencies section of your project's `buil
 ```
 dependencies {
     // other project dependencies...
-    implementation 'io.github.sornerol:chesscom-pubapi-wrapper:1.4.0'
+    implementation 'io.github.sornerol:chesscom-pubapi-wrapper:1.4.1'
 }
 ```
 
