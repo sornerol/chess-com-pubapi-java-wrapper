@@ -18,7 +18,7 @@ Add the following dependency to the dependencies section of your project's `pom.
     <dependency>
         <groupId>io.github.sornerol</groupId>
         <artifactId>chesscom-pubapi-wrapper</artifactId>
-        <version>1.4.3</version>
+        <version>1.4.4</version>
     </dependency>
 </dependencies
 ```
@@ -27,7 +27,7 @@ Add the following dependency to the dependencies section of your project's `buil
 ```
 dependencies {
     // other project dependencies...
-    implementation 'io.github.sornerol:chesscom-pubapi-wrapper:1.4.3'
+    implementation 'io.github.sornerol:chesscom-pubapi-wrapper:1.4.4'
 }
 ```
 
@@ -56,6 +56,11 @@ public class Main {
 
     public static void main(String[] args) throws ChessComPubApiException, IOException {
         PlayerClient client = new PlayerClient();
+        /*
+         * Setting a user agent with your application name and your contact info is highly recommended in case Chess.com
+         * needs to block your application due to abnormal or suspicious activity.
+         */
+        client.setUserAgent("My Chess App; username: lrj825; contact: lrj825@example.com");
         Player player = client.getPlayerByUsername("erik");
 
         System.out.println(player.toString());
