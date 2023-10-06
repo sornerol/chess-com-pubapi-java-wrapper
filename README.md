@@ -56,6 +56,11 @@ public class Main {
 
     public static void main(String[] args) throws ChessComPubApiException, IOException {
         PlayerClient client = new PlayerClient();
+        /*
+         * Setting a user agent with your application name and your contact info is highly recommended in case Chess.com
+         * needs to block your application due to abnormal or suspicious activity.
+         */
+        client.setUserAgent("My Chess App; username: lrj825; contact: lrj825@example.com");
         Player player = client.getPlayerByUsername("erik");
 
         System.out.println(player.toString());
