@@ -41,4 +41,11 @@ public class Streamer {
      */
     @JsonProperty("is_live")
     private Boolean isLive;
+
+    /**
+     * Is the streamer a Chess.com Community Streamer?
+     * @see <a href=https://www.chess.com/news/view/announcing-community-streamers-chesscom>Announcing Major Additions to Streaming on Chess.com</a>
+     */
+    @JsonProperty("is_community_streamer")
+    private Boolean isCommunityStreamer;
 }

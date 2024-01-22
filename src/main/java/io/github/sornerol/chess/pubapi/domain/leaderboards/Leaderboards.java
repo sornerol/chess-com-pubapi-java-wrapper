@@ -89,6 +89,6 @@ public class Leaderboards {
     /**
      * Puzzle Battle leaderboard
      */
-    @JsonProperty("Battle")
+    @JsonProperty("battle")
     private List<LeaderboardEntry> battleLeaderboard;
 }
