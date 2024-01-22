@@ -19,4 +19,11 @@ public class PlayerList {
      */
     @JsonProperty("players")
     private List<String> players;
+
+    /**
+     * Comment about the result set. This is used when Chess.com is not providing a full
+     * result list due to performance or other reasons.
+     */
+    @JsonProperty("comment")
+    private String comment;
 }
