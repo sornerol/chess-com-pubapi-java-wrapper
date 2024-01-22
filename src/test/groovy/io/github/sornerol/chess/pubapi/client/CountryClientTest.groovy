@@ -1,6 +1,7 @@
 package io.github.sornerol.chess.pubapi.client
 
 import io.github.sornerol.chess.pubapi.domain.country.Country
+import io.github.sornerol.chess.pubapi.test.TestConfigurationUtility
 import spock.lang.Specification
 
 
@@ -14,6 +15,7 @@ class CountryClientTest extends Specification {
     def setup() {
         sut = new CountryClient()
         sut.userAgent = 'chesscom-pubapi-wrapper unit tests; username: lrj825; github.com/sornerol/chess-com-pubapi-java-wrapper'
+        sut.setFailOnUnknownProperties(TestConfigurationUtility.isOptionEnabled('checkFields'))
     }
 
     def "Get country from API URL"() {

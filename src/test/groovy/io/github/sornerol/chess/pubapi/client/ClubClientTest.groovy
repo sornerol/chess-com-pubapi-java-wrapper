@@ -3,6 +3,7 @@ package io.github.sornerol.chess.pubapi.client
 import io.github.sornerol.chess.pubapi.domain.club.Club
 import io.github.sornerol.chess.pubapi.domain.club.ClubMembers
 import io.github.sornerol.chess.pubapi.domain.club.match.ClubMatches
+import io.github.sornerol.chess.pubapi.test.TestConfigurationUtility
 import spock.lang.Specification
 
 
@@ -14,6 +15,7 @@ class ClubClientTest extends Specification {
     def setup() {
         sut = new ClubClient()
         sut.userAgent = 'chesscom-pubapi-wrapper unit tests; username: lrj825; github.com/sornerol/chess-com-pubapi-java-wrapper'
+        sut.setFailOnUnknownProperties(TestConfigurationUtility.isOptionEnabled('checkFields'))
     }
 
     def "Get club by API URL"() {

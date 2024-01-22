@@ -10,6 +10,7 @@ import io.github.sornerol.chess.pubapi.domain.player.match.MatchHistory
 import io.github.sornerol.chess.pubapi.domain.player.stats.PlayerStats
 import io.github.sornerol.chess.pubapi.domain.player.tournament.TournamentHistory
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException
+import io.github.sornerol.chess.pubapi.test.TestConfigurationUtility
 import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -25,6 +26,7 @@ class PlayerClientTest extends Specification {
     def setup() {
         sut = new PlayerClient()
         sut.userAgent = 'chesscom-pubapi-wrapper unit tests; username: lrj825; github.com/sornerol/chess-com-pubapi-java-wrapper'
+        sut.setFailOnUnknownProperties(TestConfigurationUtility.isOptionEnabled('checkFields'))
     }
 
     def "Get player from API URL"() {

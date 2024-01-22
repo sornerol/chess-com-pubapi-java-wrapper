@@ -3,6 +3,7 @@ package io.github.sornerol.chess.pubapi.client
 import io.github.sornerol.chess.pubapi.domain.tournament.Tournament
 import io.github.sornerol.chess.pubapi.domain.tournament.TournamentRound
 import io.github.sornerol.chess.pubapi.domain.tournament.TournamentRoundGroup
+import io.github.sornerol.chess.pubapi.test.TestConfigurationUtility
 import spock.lang.Specification
 
 class TournamentClientTest extends Specification {
@@ -18,6 +19,7 @@ class TournamentClientTest extends Specification {
     def setup() {
         sut = new TournamentClient()
         sut.userAgent = 'chesscom-pubapi-wrapper unit tests; username: lrj825; github.com/sornerol/chess-com-pubapi-java-wrapper'
+        sut.setFailOnUnknownProperties(TestConfigurationUtility.isOptionEnabled('checkFields'))
     }
 
     def "Get tournament from API URL"() {

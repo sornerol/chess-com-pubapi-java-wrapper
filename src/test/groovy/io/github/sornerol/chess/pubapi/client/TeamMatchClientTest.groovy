@@ -2,6 +2,7 @@ package io.github.sornerol.chess.pubapi.client
 
 import io.github.sornerol.chess.pubapi.domain.match.TeamMatch
 import io.github.sornerol.chess.pubapi.domain.match.TeamMatchBoard
+import io.github.sornerol.chess.pubapi.test.TestConfigurationUtility
 import spock.lang.Specification
 
 class TeamMatchClientTest extends Specification {
@@ -16,6 +17,7 @@ class TeamMatchClientTest extends Specification {
     def setup() {
         sut = new TeamMatchClient()
         sut.userAgent = 'chesscom-pubapi-wrapper unit tests; username: lrj825; github.com/sornerol/chess-com-pubapi-java-wrapper'
+        sut.setFailOnUnknownProperties(TestConfigurationUtility.isOptionEnabled('checkFields'))
     }
 
     def "Get team match from API URL"() {
