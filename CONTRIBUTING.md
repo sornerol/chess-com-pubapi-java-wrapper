@@ -10,5 +10,15 @@ All significant changes should be tied to an open issue. Trivial changes (e.g., 
 ## Documentation
 Please add or update Javadocs as necessary. This allows for a better experience for end users.
 
+## Tests
+If your change implements a new API endpoint, please add a unit test that verifies the new functionality. Your unit test
+need not be super extensive; it's fine just to verify that the new method calls the corresponding API endpoint
+and that Chess.com returns a response.
+
+### Running tests
+Before your pull request is merged, it must pass all unit tests. You can verify your changes in your local environment
+by running `mvn test`. You can also verify that the API wrapper knows about all of the fields supplied in Chess.com's response
+with `mvn test -DcheckFields=true`.
+
 ## License
 By contributing to this project, you agree that your contributions will be licensed under its [Apache-2.0 License](https://github.com/sornerol/chess-com-pubapi-java-wrapper/blob/main/LICENSE).

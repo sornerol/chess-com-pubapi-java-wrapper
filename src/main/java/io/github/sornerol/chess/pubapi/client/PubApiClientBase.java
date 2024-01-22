@@ -78,6 +78,15 @@ abstract class PubApiClientBase {
     @Setter
     private RetryStrategy retryStrategy;
 
+    /**
+     * Determines whether the {@link ObjectMapper} should fail if the response contains an
+     * unknown property. For most applications, this value should be false. Turning this feature
+     * on is really only useful for testing scenarios.
+     */
+    @Getter
+    @Setter
+    private Boolean failOnUnknownProperties;
+
     private final CloseableHttpClient httpClient;
 
     protected PubApiClientBase() {
@@ -85,6 +94,7 @@ abstract class PubApiClientBase {
         retryInterval = DEFAULT_RETRY_INTERVAL;
         maxRetries = DEFAULT_MAX_RETRIES;
         retryStrategy = DEFAULT_RETRY_STRATEGY;
+        failOnUnknownProperties = false;
     }
 
     /**
@@ -101,7 +111,7 @@ abstract class PubApiClientBase {
         String responseJson = getRequest(endpoint);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, failOnUnknownProperties);
         return objectMapper.readValue(responseJson, clazz);
     }
 
