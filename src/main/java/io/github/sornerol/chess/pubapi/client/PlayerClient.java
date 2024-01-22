@@ -23,6 +23,7 @@ import java.util.List;
  */
 public class PlayerClient extends PubApiClientBase {
     private static final String ENDPOINT_BASE = "https://api.chess.com/pub/player";
+    private static final String TITLED_PLAYERS_ENDPOINT_BASE = "https://api.chess.com/pub/titled";
 
     /**
      * Fetch player data using a Chess.com PubAPI URL.
@@ -64,7 +65,7 @@ public class PlayerClient extends PubApiClientBase {
      * @see <a href="https://www.chess.com/news/view/published-data-api#pubapi-endpoint-titled">Chess.com PubAPI documentation</a>
      */
     public List<String> getPlayersWithTitle(Title title) throws IOException, ChessComPubApiException {
-        String endpoint = String.format("titled/%s", title);
+        String endpoint = String.format("%s/%s",TITLED_PLAYERS_ENDPOINT_BASE, title);
         return getRequest(endpoint, PlayerList.class).getPlayers();
     }
 
