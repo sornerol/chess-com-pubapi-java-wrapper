@@ -7,6 +7,7 @@ import io.github.sornerol.chess.pubapi.client.enums.RetryStrategy;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
@@ -21,6 +22,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * The base class of all the PubAPI client classes.
  */
+@Slf4j
 abstract class PubApiClientBase {
 
     /**
@@ -127,6 +129,10 @@ abstract class PubApiClientBase {
         HttpGet request = new HttpGet(endpoint);
         if (userAgent != null) {
             request.addHeader(new BasicHeader("User-Agent", userAgent));
+        } else {
+            log.warn("No User-Agent provided. Your request may not work. See " +
+                    "https://www.chess.com/announcements/view/breaking-change-user-agent-contact-info-required for" +
+                    "additional details");
         }
 
         String responseBody;
