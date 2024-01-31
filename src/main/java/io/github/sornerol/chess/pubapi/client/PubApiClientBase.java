@@ -7,12 +7,13 @@ import io.github.sornerol.chess.pubapi.client.enums.RetryStrategy;
 import io.github.sornerol.chess.pubapi.exception.ChessComPubApiException;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicHeader;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.core5.http.message.BasicHeader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,6 +22,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * The base class of all the PubAPI client classes.
  */
+@Slf4j
 abstract class PubApiClientBase {
 
     /**
@@ -127,6 +129,10 @@ abstract class PubApiClientBase {
         HttpGet request = new HttpGet(endpoint);
         if (userAgent != null) {
             request.addHeader(new BasicHeader("User-Agent", userAgent));
+        } else {
+            log.warn("No User-Agent provided. Your request may not work. See " +
+                    "https://www.chess.com/announcements/view/breaking-change-user-agent-contact-info-required for" +
+                    "additional details");
         }
 
         String responseBody;
@@ -135,7 +141,7 @@ abstract class PubApiClientBase {
         boolean keepTrying = false;
         do {
             try (CloseableHttpResponse response = httpClient.execute(request)) {
-                int statusCode = response.getStatusLine().getStatusCode();
+                int statusCode = response.getCode();
                 if (statusCode == ResponseCode.RATE_LIMIT_EXCEEDED.getValue() && shouldTryRequestAgain(attempts)) {
                     keepTrying = true;
                     attempts++;
