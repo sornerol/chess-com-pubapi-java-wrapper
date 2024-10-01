@@ -8,8 +8,8 @@ import spock.lang.Specification
 
 
 class ClubClientTest extends Specification {
-    public static final String TEST_CLUB_ID = 'chess-com-developer-community'
-    public static final String TEST_CLUB_API_URL = 'https://api.chess.com/pub/club/chess-com-developer-community'
+    public static final String TEST_CLUB_ID = 'chess-com-daily-chess-club'
+    public static final String TEST_CLUB_API_URL = 'https://api.chess.com/pub/club/chess-com-daily-chess-club'
     private ClubClient sut
 
     def setup() {
