@@ -46,6 +46,14 @@ public class Club {
     private String countryApiUrl;
 
     /**
+     * The club's location. Note that this field appears to accept free-form
+     * text, so the returned value may not actually represent any sort
+     * of location.
+     */
+    @JsonProperty("location")
+    private String location;
+
+    /**
      * The average daily rating of club members
      */
     @JsonProperty("average_daily_rating")
