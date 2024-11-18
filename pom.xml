@@ -6,7 +6,7 @@
 
     <groupId>io.github.sornerol</groupId>
     <artifactId>chesscom-pubapi-wrapper</artifactId>
-    <version>1.6.3</version>
+    <version>1.6.4</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -34,7 +34,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jackson.version>2.17.2</jackson.version>
+        <jackson.version>2.18.1</jackson.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -67,7 +67,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents.client5</groupId>
             <artifactId>httpclient5</artifactId>
-            <version>5.4</version>
+            <version>5.4.1</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -105,7 +105,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.10.0</version>
+                        <version>3.11.1</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -178,7 +178,7 @@
                     <plugin>
                         <groupId>org.codehaus.gmavenplus</groupId>
                         <artifactId>gmavenplus-plugin</artifactId>
-                        <version>3.0.2</version>
+                        <version>4.0.1</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -190,7 +190,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.5.0</version>
+                        <version>3.5.2</version>
                     </plugin>
                 </plugins>
             </build>
@@ -211,7 +211,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.10.0</version>
+                        <version>3.11.1</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -259,7 +259,7 @@
                     <plugin>
                         <groupId>org.codehaus.gmavenplus</groupId>
                         <artifactId>gmavenplus-plugin</artifactId>
-                        <version>3.0.2</version>
+                        <version>4.0.1</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -271,7 +271,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.5.0</version>
+                        <version>3.5.2</version>
                     </plugin>
                 </plugins>
             </build>
