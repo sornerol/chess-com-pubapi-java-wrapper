@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * Contains information about a Chess.com streamer.
  */
@@ -48,4 +50,10 @@ public class Streamer {
      */
     @JsonProperty("is_community_streamer")
     private Boolean isCommunityStreamer;
+
+    /**
+     * List of streaming platforms associated with this streamer
+     */
+    @JsonProperty("platforms")
+    private List<StreamingPlatform> streamingPlatforms;
 }
