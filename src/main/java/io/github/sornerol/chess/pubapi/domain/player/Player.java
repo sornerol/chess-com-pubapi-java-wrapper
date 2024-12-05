@@ -3,9 +3,12 @@ package io.github.sornerol.chess.pubapi.domain.player;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.sornerol.chess.pubapi.domain.player.enums.MembershipStatus;
 import io.github.sornerol.chess.pubapi.domain.player.enums.Title;
+import io.github.sornerol.chess.pubapi.domain.streamers.StreamingPlatform;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.List;
 
 /**
  * Details about a player
@@ -121,4 +124,14 @@ public class Player {
      */
     @JsonProperty("league")
     private String league;
+
+
+    /**
+     * If the player is a streamer, a list of streaming platforms associated with this player. Note that
+     * only the platformType and channelUrl fields are set when retrieving details using the player API
+     * endpoints. The Streamers API endpoint provides more details about streamers' streaming platforms.
+     */
+    @JsonProperty("streaming_platforms")
+    private List<StreamingPlatform> streamingPlatforms;
+
 }
