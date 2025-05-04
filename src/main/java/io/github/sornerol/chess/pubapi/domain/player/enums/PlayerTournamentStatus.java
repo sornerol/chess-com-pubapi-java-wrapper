@@ -35,7 +35,12 @@ public enum PlayerTournamentStatus {
     /**
      * Player was removed from the tournament by the tournament director
      */
-    REMOVED("removed");
+    REMOVED("removed"),
+
+    /**
+     * Player has received an invitation to join the tournament
+     */
+    INVITED("invited");
 
     @Getter
     @JsonValue
